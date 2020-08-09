@@ -23,6 +23,7 @@ function setFokus(elementID) {
 function drueckDenButton() {
 	let divElement = document.getElementById("divContainerID01");
 	divElement.innerHTML = "Der Button wurde gedrückt";
+	clearInterval(checkIntervall);
 }
 
 function zeigeErfolgtenEventHandler() {
@@ -40,7 +41,14 @@ function zeigeErfolgtenEventHandler() {
 	
 }
 
+
 document.addEventListener('DOMContentLoaded',zeigeErfolgtenEventHandler());
+let timerAusgabe = document.getElementById("timeDIV");
+let zaehler = 0;
+var checkIntervall = setInterval(() => {
+	zaehler++;
+	timerAusgabe.innerHTML = "Sekunden: " + zaehler;
+}, 1000);
 //document.addEventListener('DOMContentLoaded',setFokus('testButtonID'));
 // document.addEventListener("loadeddata",setFokus('testButtonID'));
 // window.onload = setFokus('testButtonID');
