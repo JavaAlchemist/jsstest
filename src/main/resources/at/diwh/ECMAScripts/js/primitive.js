@@ -26,6 +26,12 @@ function drueckDenButton() {
 	clearInterval(checkIntervall);
 }
 
+function drueckLineButton(element) {
+	divElement = document.getElementById("divContainerID01");
+	divElement.innerHTML = "Der Button " + element.id + " mit Titel " + element.innerHTML + " wurde gedrückt";
+}
+
+
 function zeigeErfolgtenEventHandler() {
 	let divElement = document.getElementById("divContainerID01");
 	divElement.innerHTML = "Der EventHandler hat zugeschlagen";
