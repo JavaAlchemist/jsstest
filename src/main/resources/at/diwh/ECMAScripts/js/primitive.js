@@ -1,9 +1,11 @@
 /*
  * ECMAScript für einfache Tests 
+ * diwh 08-2020
  */
 
 function alertMe(text) {
 	window.alert(text);
+	console.log(text);
 }
 
 function arrayTest() {
@@ -35,7 +37,13 @@ function drueckLineButton(element) {
 function zeigeErfolgtenEventHandler() {
 	let divElement = document.getElementById("divContainerID01");
 	divElement.innerHTML = "Der EventHandler hat zugeschlagen";
-	
+	var b = document.body;
+	var alleElemente = b.getElementsByTagName("*");
+	console.log("Anzahl Elemente: " + alleElemente.length);
+	for (i in alleElemente) {
+		console.log("---------------");
+		console.log(alleElemente[i].innerHTML);
+	}
 	// let elementButton = document.getElementById('testButtonID');
 	//elementButton.click();
 	
@@ -55,6 +63,9 @@ var checkIntervall = setInterval(() => {
 	zaehler++;
 	timerAusgabe.innerHTML = "Sekunden: " + zaehler;
 }, 1000);
+
+
+
 //document.addEventListener('DOMContentLoaded',setFokus('testButtonID'));
 // document.addEventListener("loadeddata",setFokus('testButtonID'));
 // window.onload = setFokus('testButtonID');
