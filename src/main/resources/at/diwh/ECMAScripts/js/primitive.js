@@ -3,9 +3,17 @@
  * diwh 08-2020
  */
 
+var angestellter = new objTest("Bernd", 55, "Jasager");
+
 function alertMe(text) {
 	window.alert(text);
 	console.log(text);
+}
+
+function objTest (name, alter, beruf) {
+	this.name = name;
+	this.alter =alter;
+	this.beruf = beruf;
 }
 
 function arrayTest() {
@@ -33,6 +41,20 @@ function drueckLineButton(element) {
 	divElement.innerHTML = "Der Button " + element.id + " mit Titel " + element.innerHTML + " wurde gedrückt";
 }
 
+function drueckButtonB(element) {
+	alertMe(Date());
+	  
+}
+
+function drueckButtonC(element) {
+	divElement = document.getElementById("divContainerID01");
+	// divElement.innerHTML = "Der Button " + element.id + " mit Titel " + element.innerHTML + " wurde gedrückt";
+	divElement.innerHTML = angestellter.name + " ist " + angestellter.alter + " und arbeitet als " + angestellter.beruf;
+	for (var x in angestellter) {
+		divElement.innerHTML = divElement.innerHTML + "<br/> hat Attribut: " + x + "mit Wert: " + angestellter[x];
+	}
+	  
+}
 
 function zeigeErfolgtenEventHandler() {
 	let divElement = document.getElementById("divContainerID01");
